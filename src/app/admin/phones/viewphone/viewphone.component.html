@@ -1,0 +1,26 @@
+<h1>Phone Details</h1>
+
+    <table>
+        <tr>
+            <td>Phone Id</td>
+            <td>{{phone.id}}</td>
+        </tr>
+        <tr>
+            <td>Phone Name</td>
+            <td>{{phone.name}}</td>
+        </tr>
+        <tr>
+            <td>Phone Description</td>
+            <td>{{phone.description}}</td>
+        </tr>
+        <tr>
+            <td>Phone Price</td>
+            <td>{{phone.price}}</td>
+        </tr>
+    </table>
+    <br>
+    <img src="{{phone.retrievedImage}}" height="200" width="200">
+    <br><br>
+
+    <a class="btn btn-small btn-warning" (click)="editPhone()">edit</a>   
+    <a class="btn btn-small btn-danger" (click)="deletePhone()">delete</a>

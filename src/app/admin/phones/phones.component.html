@@ -1,0 +1,31 @@
+<h1>Phone Admin</h1>
+<a class="btn btn-primary mb-3" (click)="addPhone()">Add New Phone</a>
+<div class="container row">
+  <div class="col-md-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Phone Name</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let phone of phones">
+          <td>{{phone.id}}</td>
+          <td>{{phone.name}}</td>
+          <td>
+            <!-- <button type="button" class="btn btn-primary" (click)="setPhone(phone.id)">Show Details</button> -->
+            <!-- <button type="button" class="btn btn-primary" (click)="(phone.id)">Show Details</button> -->
+            <button type="button" class="btn btn-primary" (click)="viewPhone(phone.id)">Show Details</button>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-6">
+    <app-addphone *ngIf="action === 'edit' || action === 'add'" [phone]="selectedPhone" (bookAddedEvent)="refreshData()"></app-addphone>&nbsp;
+    <app-viewphone *ngIf="action === 'view'" [phone]="selectedPhone" (bookDeletedEvent)="refreshData()"></app-viewphone>
+  </div>
+</div>
